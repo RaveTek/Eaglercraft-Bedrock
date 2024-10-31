@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft</title>
+  <style>
+    /* Fullscreen container for startup screen */
+    .startup-screen {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background-image: url('textures/ui/White'); /* Background image */
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Loading image style */
+    .loading-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: 1; /* Layered above background */
+    }
+  </style>
+</head>
+<body>
+  <div class="startup-screen">
+    <div class="loading-image" id="loadingImage"></div>
+  </div>
+
+  <script>
+    // Load the startup screen image based on variables
+    const isNxOs = false; // Set to true if '$nx_os' is required
+    const loadingImage = document.getElementById("loadingImage");
+
+    // Choose texture based on conditions
+    const loadingImageTexture = isNxOs 
+      ? "textures/ui/mojang_splash_screen"
+      : "textures/ui/loading_screen_0";
+
+    // Apply texture to loading image
+    loadingImage.style.backgroundImage = `url('${loadingImageTexture}')`;
+  </script>
+</body>
+</html>

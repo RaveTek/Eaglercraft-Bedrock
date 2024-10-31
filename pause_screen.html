@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft</title>
+  <style>
+    /* Fullscreen container */
+    .pause-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      font-family: 'Mojangles', sans-serif;
+      color: white;
+    }
+
+    /* Main button styles */
+    .pause-button {
+      width: 200px;
+      height: 50px;
+      font-size: 1.2em;
+      margin: 10px;
+      border: none;
+      color: white;
+      cursor: pointer;
+      background-size: cover;
+      background-image: url('textures/ui/button.png');
+      transition: background-image 0.3s;
+    }
+
+    .pause-button:hover {
+      background-image: url('textures/ui/button_hover.png');
+    }
+
+    /* Icon styles */
+    .icon {
+      width: 50px;
+      height: 50px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin: 5px;
+    }
+
+    .achievements-icon {
+      background-image: url('textures/ui/achievements');
+    }
+
+    .feedback-icon {
+      background-image: url('textures/ui/Feedback');
+    }
+
+    .change-skin-icon {
+      background-image: url('textures/ui/hangar');
+      width: 100px;
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="pause-screen">
+    <!-- Main buttons for pause menu actions -->
+    <button class="pause-button" id="returnButton">Return to Game</button>
+    <button class="pause-button" id="settingsButton">Settings</button>
+    <button class="pause-button" id="quitButton">Quit Game</button>
+
+    <!-- Icon Panel -->
+    <div class="icon-panel">
+      <div class="icon achievements-icon"></div>
+      <div class="icon feedback-icon"></div>
+      <div class="icon change-skin-icon"></div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript for Button Functionalities
+    document.getElementById("returnButton").onclick = function() {
+      alert("Returning to the game...");
+      // Code to resume game goes here
+    };
+
+    document.getElementById("settingsButton").onclick = function() {
+      alert("Opening Settings...");
+      // Code to open settings menu goes here
+    };
+
+    document.getElementById("quitButton").onclick = function() {
+      alert("Quitting game...");
+      // Code to quit game goes here
+    };
+  </script>
+</body>
+</html>

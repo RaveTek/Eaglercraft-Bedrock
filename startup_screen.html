@@ -47,6 +47,11 @@
 
     // Apply texture to loading image
     loadingImage.style.backgroundImage = `url('${loadingImageTexture}')`;
+
+    // Simulate loading completion with a timeout
+    setTimeout(() => {
+      window.location.href = "start_screen.html"; // Redirect to start screen after loading
+    }, 3000); // Adjust time as needed to match loading duration
   </script>
 </body>
 </html>
